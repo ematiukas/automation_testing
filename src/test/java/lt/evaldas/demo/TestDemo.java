@@ -1,4 +1,4 @@
-package lt.vcs.demo;
+package lt.evaldas.demo;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

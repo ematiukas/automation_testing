@@ -1,4 +1,4 @@
-package lt.vcs.demo;
+package lt.evaldas.demo;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class TestExercises {
 //    4 yra lyginis skaičius

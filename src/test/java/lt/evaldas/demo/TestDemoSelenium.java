@@ -1,4 +1,4 @@
-package lt.vcs.demo;
+package lt.evaldas.demo;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
