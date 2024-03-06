@@ -1,8 +1,8 @@
 package lt.evaldas.pom.pages.seleniumesasy;
 
 import lt.evaldas.pom.pages.Common;
+import lt.evaldas.pom.pages.Locators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class  BasicFirstFormPage {
     public static void open(String url) {
@@ -10,37 +10,34 @@ public class  BasicFirstFormPage {
         Common.openUrl(url);
     }
 
-    public static void close() {
-
-    }
 
     public static void writeMessage(String message) {
         Common.sendKeysToElement(
-                By.xpath("//input[@id='user-message']"), message
+                Locators.SeleniumEasy.BasicFirstForm.inputUserMessage, message
         );
     }
 
     public static void clickOnButtonShowMessage() {
-        Common.clickOnElement(By.xpath("//button[@onclick='showInput();']"));
+        Common.clickOnElement(Locators.SeleniumEasy.BasicFirstForm.buttonShowMessage);
     }
 
     public static String readMessage() {
-        return Common.getTextFromElement(By.xpath("//span[@id='display']"));
+        return Common.getTextFromElement(Locators.SeleniumEasy.BasicFirstForm.spanDisplayMessage);
     }
 
     public static void writeValueA(String value) {
-        Common.sendKeysToElement(By.xpath("//input[@id='value1']"), value);
+        Common.sendKeysToElement(Locators.SeleniumEasy.BasicFirstForm.inputValue1, value);
     }
 
     public static void writeValueB(String value) {
-        Common.sendKeysToElement(By.xpath("//input[@id='value2']"), value);
+        Common.sendKeysToElement(Locators.SeleniumEasy.BasicFirstForm.inputValue2, value);
     }
 
     public static void clickOnButtonGetTotal() {
-        Common.clickOnElement(By.xpath("//*[@id='gettotal']//button"));
+        Common.clickOnElement(Locators.SeleniumEasy.BasicFirstForm.buttonGetTotal);
     }
 
     public static String readSumTotal() {
-        return Common.getTextFromElement(By.xpath("//span[@id='displayvalue']"));
+        return Common.getTextFromElement(Locators.SeleniumEasy.BasicFirstForm.spanDisplayValues);
     }
 }

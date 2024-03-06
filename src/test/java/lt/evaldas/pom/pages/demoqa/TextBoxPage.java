@@ -1,6 +1,7 @@
 package lt.evaldas.pom.pages.demoqa;
 
 import lt.evaldas.pom.pages.Common;
+import lt.evaldas.pom.pages.Locators;
 import org.openqa.selenium.By;
 
 public class TextBoxPage {
@@ -9,15 +10,11 @@ public class TextBoxPage {
         Common.openUrl(url);
     }
 
-    public static void close() {
-        Common.quitChromeDriver();
-    }
-
     public static void closeConsent() {
-        boolean isElementVisible = Common.waitElementVisible(By.xpath("//p[text()='Consent']"), 8);
+        boolean isElementVisible = Common.waitElementVisible(Locators.DemoQa.TextBox.paragraphConsent, 8);
 
         if (isElementVisible) {
-            Common.clickOnElement(By.xpath("//p[text()='Consent']"));
+            Common.clickOnElement(Locators.DemoQa.TextBox.paragraphConsent);
         }
     }
 
