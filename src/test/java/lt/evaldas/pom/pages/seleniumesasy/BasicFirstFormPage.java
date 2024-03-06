@@ -4,7 +4,7 @@ import lt.evaldas.pom.pages.Common;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class BasicFirstFormPage {
+public class  BasicFirstFormPage {
     public static void open(String url) {
         Common.setUpChrome();
         Common.openUrl(url);

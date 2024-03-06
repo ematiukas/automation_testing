@@ -1,6 +1,7 @@
 package lt.evaldas.pom.tests.seleniumesasy;
 
 import lt.evaldas.pom.pages.seleniumesasy.BasicFirstFormPage;
+import lt.evaldas.pom.tests.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -8,8 +9,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class BasicFirstFormTest {
+public class BasicFirstFormTest extends TestBase {
     @BeforeMethod
+    @Override
     public void setUp() {
         BasicFirstFormPage.open("https://demo.seleniumeasy.com/basic-first-form-demo.html");
     }
@@ -71,10 +73,5 @@ public class BasicFirstFormTest {
 
 
         Assert.assertEquals(actualSumTotal, expectedSumTotal);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        BasicFirstFormPage.close();
     }
 }
