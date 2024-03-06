@@ -29,15 +29,15 @@ public class BasicFirstFormPage {
     }
 
     public static void writeValueA(String value) {
-        Common.sendKeysToElement(By.xpath("//input[@id='value1']"),value);
+        Common.sendKeysToElement(By.xpath("//input[@id='value1']"), value);
     }
 
     public static void writeValueB(String value) {
-        Common.sendKeysToElement(By.xpath("//input[@id='value2']"),value);
+        Common.sendKeysToElement(By.xpath("//input[@id='value2']"), value);
     }
 
     public static void clickOnButtonGetTotal() {
-        Common.clickOnElement(By.xpath("//button[@onclick='return total()']"));
+        Common.clickOnElement(By.xpath("//*[@id='gettotal']//button"));
     }
 
     public static String readSumTotal() {
