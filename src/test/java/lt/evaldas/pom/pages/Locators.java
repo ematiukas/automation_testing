@@ -3,6 +3,7 @@ package lt.evaldas.pom.pages;
 import org.openqa.selenium.By;
 
 public class Locators {
+
     public static class SeleniumEasy{
         public static class BasicFirstForm{
 
@@ -13,6 +14,12 @@ public class Locators {
             public static By inputValue2 = By.xpath("//input[@id='value2']");
             public static By buttonGetTotal = By.xpath("//*[@id='gettotal']//button");
             public static By spanDisplayValues = By.xpath("//span[@id='displayvalue']");
+        }
+
+        public static class BasicCheckbox{
+
+            public static By checkboxIsAgeSelected = (By.xpath("//input[@id='isAgeSelected']"));
+            public static By divTextAge = By.xpath("//div[@id='txtAge']");
         }
     }
 
