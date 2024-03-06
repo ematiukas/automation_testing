@@ -43,41 +43,34 @@ public class BasicFirstFormTest {
     @Test
     public void testTwoImputField() {
 
-        String input1 = "123";
-        String input2 = "456";
-        String expectedResult = "579";
-        String actualResult = null;
+        String input1 = "5";
+        String input2 = "5";
+        String expectedSumTotal = "10";
+        String actualSumTotal;
 
         BasicFirstFormPage.writeValueA(input1);
         BasicFirstFormPage.writeValueB(input2);
         BasicFirstFormPage.clickOnButtonGetTotal();
-        actualResult = BasicFirstFormPage.readSumTotal();
+        actualSumTotal = BasicFirstFormPage.readSumTotal();
 
-
-        Assert.assertTrue(
-                actualResult.contains(expectedResult),
-                "\nExpected: %s, \nActual: %s\n".formatted(expectedResult, actualResult)
-        );
+        Assert.assertEquals(actualSumTotal, expectedSumTotal);
     }
 
     @Test
-    public void testNegativeImputField() {
+    public void testNegativeTwoImputField() {
 
         String input1 = "5";
         String input2 = "aaa";
-        String expectedResult = "Nan";
-        String actualResult = null;
+        String expectedSumTotal = "NaN";
+        String actualSumTotal;
 
         BasicFirstFormPage.writeValueA(input1);
         BasicFirstFormPage.writeValueB(input2);
         BasicFirstFormPage.clickOnButtonGetTotal();
-        actualResult = BasicFirstFormPage.readSumTotal();
+        actualSumTotal = BasicFirstFormPage.readSumTotal();
 
 
-        Assert.assertTrue(
-                actualResult.contains(expectedResult),
-                "\nExpected: %s, \nActual: %s\n".formatted(expectedResult, actualResult)
-        );
+        Assert.assertEquals(actualSumTotal, expectedSumTotal);
     }
 
     @AfterMethod
