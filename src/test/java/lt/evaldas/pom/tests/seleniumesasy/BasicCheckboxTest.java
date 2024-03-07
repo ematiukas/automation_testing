@@ -46,4 +46,25 @@ public class BasicCheckboxTest extends TestBase {
 
         Assert.assertFalse(actualResult);
     }
+    @Test
+    public void testIfCheckboxGroupIsSelected(){
+        boolean expectedResult = true;
+        boolean actualResult;
+
+        BasicCheckboxPage.clickOnButtonSelectedAll();
+        actualResult = BasicCheckboxPage.isCheckboxGroupSelected(expectedResult);
+
+        Assert.assertTrue(actualResult == expectedResult);
+    }
+    @Test
+    public void testIfCheckboxGroupNotSelected(){
+        boolean expectedResult = false;
+        boolean actualResult;
+
+        BasicCheckboxPage.clickOnButtonSelectedAll();   //ctrl + D
+        BasicCheckboxPage.clickOnButtonSelectedAll();
+        actualResult = BasicCheckboxPage.isCheckboxGroupSelected(expectedResult);
+
+        Assert.assertTrue(actualResult);
+    }
 }

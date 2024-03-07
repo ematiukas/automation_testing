@@ -24,6 +24,8 @@ public class Locators {
                     By.xpath("(//input[@id='isAgeSelected']/../..//input)[2]");
             public static By checkboxDefaultDisabled =
                     By.xpath("(//input[@id='isAgeSelected']/../..//input)[3]");
+            public static By buttonSelectAll = By.xpath("//input[@id='check1']");
+            public static By checkboxGroup = By.xpath("//input[@class ='cb1-element']");
         }
     }
 
