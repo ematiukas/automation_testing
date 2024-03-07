@@ -18,6 +18,26 @@ public class TextBoxPage {
         }
     }
 
-    public static void enterFullName(String inputFullName) {
+    public static void writeFullName(String inputFullName) {
+        Common.sendKeysToElement(
+                By.xpath("//input[@id='userName']"), inputFullName   //geriau ID
+        );
+    }
+
+    public static void clickOnButtonSubmit() {
+        Common.clickOnElement(By.xpath("//button[@id='submit']"));
+    }
+
+    public static String readActualFullName() {
+        return Common.getTextFromElement(By.xpath("//p[@id='name']"));
+    }
+
+    public static void writeMessageEmail(String inputEmail) {
+        Common.sendKeysToElement(
+                By.xpath("//input[@id='userEmail']"), inputEmail);
+    }
+
+    public static String readActualEmail() {
+        return Common.getTextFromElement(By.xpath("//p[@id='email']"));
     }
 }
