@@ -16,4 +16,12 @@ public class BasicCheckboxPage {
     public static String readMessageCheckboxIsCheck() {
         return Common.getTextFromElement(Locators.SeleniumEasy.BasicCheckbox.divTextAge);
     }
+
+    public static boolean isCheckboxSelected() {
+        return Common.isElementSelected(Locators.SeleniumEasy.BasicCheckbox.checkboxDefaultSelected);
+    }
+
+    public static boolean isCheckboxEnabled() {
+        return Common.isElementEnabled(Locators.SeleniumEasy.BasicCheckbox.checkboxDefaultDisabled);
+    }
 }

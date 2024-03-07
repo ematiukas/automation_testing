@@ -56,4 +56,11 @@ public class Common {
         }
         return true;
     }
+
+    public static boolean isElementSelected(By locator) {
+        return getElement(locator).isSelected();
+    }
+    public static boolean isElementEnabled(By locator) {
+        return getElement(locator).isEnabled();
+    }
 }

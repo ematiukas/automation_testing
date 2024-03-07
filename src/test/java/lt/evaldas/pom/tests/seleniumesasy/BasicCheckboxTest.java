@@ -28,4 +28,22 @@ public class BasicCheckboxTest extends TestBase {
                 "\nExpected: %s, \nActual: %s\n".formatted(expectedResult, actualResult)
         );
     }
+
+    @Test
+    public void testIfDefaultCheckboxIsSelected(){
+        boolean expectedResult = true;
+        boolean actualResult;
+
+        actualResult = BasicCheckboxPage.isCheckboxSelected();
+
+        Assert.assertTrue(actualResult = expectedResult);
+    }
+    @Test
+    public void testIfDefaultCheckboxIsDisabled(){
+        boolean actualResult;
+
+        actualResult = BasicCheckboxPage.isCheckboxEnabled();
+
+        Assert.assertFalse(actualResult);
+    }
 }

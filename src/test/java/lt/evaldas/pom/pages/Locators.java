@@ -20,6 +20,10 @@ public class Locators {
 
             public static By checkboxIsAgeSelected = (By.xpath("//input[@id='isAgeSelected']"));
             public static By divTextAge = By.xpath("//div[@id='txtAge']");
+            public static By checkboxDefaultSelected =
+                    By.xpath("(//input[@id='isAgeSelected']/../..//input)[2]");
+            public static By checkboxDefaultDisabled =
+                    By.xpath("(//input[@id='isAgeSelected']/../..//input)[3]");
         }
     }
 
