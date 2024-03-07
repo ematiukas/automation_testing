@@ -27,6 +27,15 @@ public class Locators {
             public static By buttonSelectAll = By.xpath("//input[@id='check1']");
             public static By checkboxGroup = By.xpath("//input[@class ='cb1-element']");
         }
+
+        public static class BasicRadioButton {
+            public static By buttonGetCheckValue = By.xpath("//button[@id='buttoncheck']");
+            public static By paragrapheGetCheckedValue = By.xpath("//p[@class='radiobutton']");
+
+            public static By setRadioButtonOptradio(Constant.BasicRadioButton value) {
+                return By.xpath("//input[@value='%s' and @name='optradio']".formatted(value.value));
+            }
+        }
     }
 
     public static class DemoQa{
