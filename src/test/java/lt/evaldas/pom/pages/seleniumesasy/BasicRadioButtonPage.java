@@ -22,4 +22,20 @@ public class BasicRadioButtonPage {
     public static String readCheckedValue() {
         return Common.getTextFromElement(Locators.SeleniumEasy.BasicRadioButton.paragrapheGetCheckedValue);
     }
+
+    public static void clickOnGenderButton(String gender) {
+        Common.clickOnElement(Locators.SeleniumEasy.BasicRadioButton.setRadoButtonGender(gender));
+    }
+
+    public static void clickOnAgeButton(String age) {
+        Common.clickOnElement(Locators.SeleniumEasy.BasicRadioButton.setRadioButtonAgeGroup(age));
+    }
+
+    public static void pressButtonGetValue() {
+        Common.clickOnElement(Locators.SeleniumEasy.BasicRadioButton.buttonGetValues);
+    }
+
+    public static String readMessageOfRadioButtonGroup() {
+        return Common.getTextFromElement(Locators.SeleniumEasy.BasicRadioButton.paragraphGetGroupValues);
+    }
 }
