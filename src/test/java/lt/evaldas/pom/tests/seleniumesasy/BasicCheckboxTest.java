@@ -6,6 +6,7 @@ import lt.evaldas.pom.pages.seleniumesasy.BasicFirstFormPage;
 import lt.evaldas.pom.tests.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class BasicCheckboxTest extends TestBase {
@@ -46,25 +47,36 @@ public class BasicCheckboxTest extends TestBase {
 
         Assert.assertFalse(actualResult);
     }
-    @Test
-    public void testIfCheckboxGroupIsSelected(){
-        boolean expectedResult = true;
-        boolean actualResult;
 
-        BasicCheckboxPage.clickOnButtonSelectedAll();
-        actualResult = BasicCheckboxPage.isCheckboxGroupSelected(expectedResult);
-
-        Assert.assertTrue(actualResult == expectedResult);
+    @DataProvider(name = "dataProviderCheckboxGroup")
+    public Object[][] provideDataForCheckboxGroup(){
+        return new Object[][]{
+                {true},
+                {false},
+        };
     }
-    @Test
-    public void testIfCheckboxGroupNotSelected(){
-        boolean expectedResult = false;
+    @Test(dataProvider = "dataProviderCheckboxGroup")
+    public void testCheckboxGroup(boolean expectedResult){
         boolean actualResult;
 
-        BasicCheckboxPage.clickOnButtonSelectedAll();   //ctrl + D
+        if (!expectedResult){
+            BasicCheckboxPage.clickOnButtonSelectedAll();
+        }
+
         BasicCheckboxPage.clickOnButtonSelectedAll();
         actualResult = BasicCheckboxPage.isCheckboxGroupSelected(expectedResult);
 
         Assert.assertTrue(actualResult);
     }
+//    @Test
+//    public void testIfCheckboxGroupNotSelected(){
+//        boolean expectedResult = false;
+//        boolean actualResult;
+//
+//        BasicCheckboxPage.clickOnButtonSelectedAll();   //ctrl + D
+//        BasicCheckboxPage.clickOnButtonSelectedAll();
+//        actualResult = BasicCheckboxPage.isCheckboxGroupSelected(expectedResult);
+//
+//        Assert.assertTrue(actualResult);
+//    }
 }
