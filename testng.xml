@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium demo">
-<!--    <test name="SeleniumEasy">-->
-<!--        <classes>-->
-<!--            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicCheckboxTest"/>-->
-<!--            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicRadioButtonTest"/>-->
-<!--            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicFirstFormTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+<suite name="Selenium demo" parallel="classes" thread-count="2">
+    <test name="SeleniumEasy">
+        <classes>
+            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicCheckboxTest"/>
+            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicRadioButtonTest"/>
+            <class name="lt.evaldas.pom.tests.seleniumesasy.BasicFirstFormTest"/>
+        </classes>
+    </test>
     <test name="DemoQA">
         <classes>
             <class name="lt.evaldas.pom.tests.demoqa.TextBoxTest"/>
