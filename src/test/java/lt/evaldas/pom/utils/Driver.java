@@ -9,6 +9,7 @@ import java.time.Duration;
 
 public class Driver {
     private static WebDriver chromeDriver;
+
     public static void setUpChrome() {
         WebDriverManager.chromedriver().setup();
 
@@ -28,5 +29,5 @@ public class Driver {
 
     public static void quitChromeDriver() {
         chromeDriver.quit();
-            }
+    }
 }

@@ -53,5 +53,10 @@ public class Locators {
 
             public static By paragraphConsent = By.xpath("//p[text()='Consent']");
         }
+
+        public static class Buttons {
+            public static By buttonDoubleClick = By.xpath("//button[@id='doubleClickBtn']");
+            public static By paragraphDoubleClickMessage = By.xpath("//p[@id='doubleClickMessage']");
+        }
     }
 }

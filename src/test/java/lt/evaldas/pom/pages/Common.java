@@ -4,6 +4,8 @@ import lt.evaldas.pom.utils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,22 +23,24 @@ public class Common {
         Driver.setUpChrome();
         Driver.getChromeDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(waitSeconds));
     }
+
     public static void openUrl(String url) {
         Driver.getChromeDriver().get(url);
     }
 
-    public static void quitChromeDriver(){
+    public static void quitChromeDriver() {
         Driver.quitChromeDriver();
     }
 
-    private static WebElement getElement(By locator){
+    private static WebElement getElement(By locator) {
         return Driver.getChromeDriver().findElement(locator);
     }
 
-    private static List<WebElement> getElements(By locator){
+    private static List<WebElement> getElements(By locator) {
         return Driver.getChromeDriver().findElements(locator);
     }
-        public static void sendKeysToElement(By locator, String text) {
+
+    public static void sendKeysToElement(By locator, String text) {
         getElement(locator).sendKeys(text);
     }
 
@@ -50,7 +54,7 @@ public class Common {
 
     public static boolean waitElementVisible(By locator, int seconds) {
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getChromeDriver(),Duration.ofSeconds(seconds));
+            WebDriverWait wait = new WebDriverWait(Driver.getChromeDriver(), Duration.ofSeconds(seconds));
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (TimeoutException e) {
             return false;
@@ -61,12 +65,13 @@ public class Common {
     public static boolean isElementSelected(By locator) {
         return getElement(locator).isSelected();
     }
+
     public static boolean isElementEnabled(By locator) {
         return getElement(locator).isEnabled();
     }
 
     public static List<Boolean> isElementGroupSelected(By locator) {
-        List<Boolean>  list = new ArrayList<>();
+        List<Boolean> list = new ArrayList<>();
 
         for (WebElement element : getElements(locator)) {
             list.add(element.isSelected());
@@ -74,5 +79,28 @@ public class Common {
 
 
         return list;
+    }
+
+    public static void clickOnElementByAction(By locator){
+        Actions actions = new Actions(Driver.getChromeDriver());
+        actions
+                .moveToElement(getElement(locator))
+                .doubleClick()
+                .perform();
+    }
+
+    public static void doubleClickOnElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getChromeDriver());
+        actions
+                .moveToElement(getElement(locator))
+                .doubleClick()
+                .perform();
+    }
+    public static void rightClickOnElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getChromeDriver());
+        actions
+//                .moveToElement(getElement(locator))
+                .contextClick(getElement(locator))
+                .perform();
     }
 }
