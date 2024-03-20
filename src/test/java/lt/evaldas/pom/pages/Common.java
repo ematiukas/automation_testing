@@ -170,4 +170,29 @@ public class Common {
 
         return true;
     }
+    private static Alert getAlert() {
+        return Driver.getChromeDriver().switchTo().alert();
+    }
+    public static void acceptAlert() {
+        getAlert().accept();
+           }
+
+    public static boolean waitAlertPresent(int seconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getChromeDriver(), Duration.ofSeconds(seconds));
+            wait.until(ExpectedConditions.alertIsPresent());
+        } catch (TimeoutException e) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static void cancelAlert() {
+        getAlert().dismiss();
+    }
+
+    public static void sendKeysToAlert(String input) {
+        getAlert().sendKeys(input);
+    }
 }

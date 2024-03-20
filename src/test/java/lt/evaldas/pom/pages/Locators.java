@@ -49,6 +49,7 @@ public class Locators {
     }
 
     public static class DemoQa{
+
         public static class TextBox{
 
             public static By paragraphConsent = By.xpath("//p[text()='Consent']");
@@ -63,6 +64,15 @@ public class Locators {
             public static By buttonVisibleAfter = By.xpath("//button[@id='visibleAfter']");
             public static By buttonEnableAfter = By.xpath("//button[@id='enableAfter']");
             public static By buttonColorChange = By.xpath("//button[@id='colorChange']");
+        }
+
+        public static class Alerts {
+            public static By buttonAlert = By.xpath("//button[@id='alertButton']");
+            public static By buttonTimerAlert = By.xpath("//button[@id='timerAlertButton']");
+            public static By buttonConfirmAlert = By.xpath("//button[@id='confirmButton']");
+            public static By spanConfirmResult = By.xpath("//span[@id='confirmResult']");
+            public static By buttonPromt = By.xpath("//button[@id='promtButton']");
+            public static By spanPromtResult = By.xpath("//span[@id='promptResult']");
         }
     }
 }
